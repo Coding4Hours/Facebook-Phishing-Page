@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- saved from url=(0142)chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/webui/index.html?type=autofill-dropdown&token=c59e46cb-043e-4e4d-98bf-a1245b3ce433 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-emotion="ui-components" data-s=""></style><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="dashlane/analysis" content="no"><title>Dashlane WebCards</title><script defer="defer" src="chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/webui/static/js/main.js"></script><link href="chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/webui/static/css/main.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/webui/static/css/369.css"><style type="text/css">/* stylelint-disable scale-unlimited/declaration-strict-value */
+/**
+ * IMPORTANT NOTE: these abstractions are soon to be replaced with a CSS-in-JS approach.
+ */
+.Alert-module_root__3EBT0 {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 800px;
+  min-width: 318px;
+  width: 100%;
+}
+.Alert-module_root__3EBT0.Alert-module_medium__3OzWx {
+  height: 70px;
+}
+.Alert-module_root__3EBT0.Alert-module_small__3QXCO {
+  height: 52px;
+}
+.Alert-module_root__3EBT0.Alert-module_success__2dQHS {
+  background-color: #278637;
+  color: #fff;
+}
+.Alert-module_root__3EBT0.Alert-module_subtle__1_6rO {
+  background-color: #d9e6e9;
+  color: #0e353d;
+}
+.Alert-module_root__3EBT0.Alert-module_strong__30BTL {
+  background-color: #0e353d;
+  color: #fff;
+}
+.Alert-module_root__3EBT0.Alert-module_warning__1P-Yz {
+  background-color: #ffe5de;
+  color: #bf2600;
+}
+.Alert-module_root__3EBT0.Alert-module_error__3tWHg {
+  background-color: #f5d8de;
+  color: #8b0018;
+}
+
+.Alert-module_content__DHEDf {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: 16px;
+}
+
+.Alert-module_description__1v-FC.Alert-module_medium__3OzWx {
+  font-family: "Public Sans";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  padding-left: 20px;
+}
+.Alert-module_description__1v-FC.Alert-module_small__3QXCO {
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-weight: 500;
+  padding-left: 16px;
+}
+
+.Alert-module_description__1v-FC a:not(.Alert-module_disabled__1rQnw), .Alert-module_description__1v-FC a:not(.Alert-module_disabled__1rQnw):any-link, .Alert-module_description__1v-FC a:not(.Alert-module_disabled__1rQnw):hover {
+  color: inherit;
+}
+
+.Alert-module_icon__8raSG.Alert-module_small__3QXCO {
+  margin-left: 16px;
+}
+.Alert-module_icon__8raSG.Alert-module_medium__3OzWx {
+  margin-left: 20px;
+}
+
+.Alert-module_closeIcon__T1h06 {
+  margin: 0 10px;
+  min-width: auto;
+  padding: 8px;
+}
+.Alert-module_closeIcon__T1h06:hover:not(:disabled), .Alert-module_closeIcon__T1h06:focus:not(:disabled) {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.Alert-module_actions__1rPDz {
+  align-items: center;
+  display: flex;
+}
+
+.Alert-module_actionButtonOnly__hL88g {
+  margin-right: 20px;
+}
+
+/**
+ * Small alerts CTA can be quite small, and wrap the text on 2 lines.
+ * We want to avoid this.
+ */
+.Alert-module_root__3EBT0 button {
+  white-space: nowrap;
+}</style><style type="text/css">.AlertWrapper-module_wrapper__1p8gm {
+  bottom: 24px;
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  z-index: 200;
+}
+
+.AlertWrapper-module_popup__SSCcd {
+  margin: 0 auto;
+  max-width: 40em;
+  position: relative;
+}</style><style type="text/css">.Background-module_overlay__214qy {
+  opacity: 0.5;
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  outline: none;
+}</style><style type="text/css">.Modal-module_modalContainer__3A63q {
+  position: fixed;
+  z-index: 149;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  outline: none;
+}
+
+.Modal-module_modalContent__2j5qJ {
+  position: absolute;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 0;
+  border-style: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}</style><style type="text/css">.DialogTitle-module_title__StsEq {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 16px;
+}</style><style type="text/css">.DialogBody-module_body__e4ixA {
+  margin-bottom: 40px;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  overflow-x: hidden;
+  overflow-y: auto;
+}</style><style type="text/css">.DialogFooter-module_footer__2xb4i {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  max-width: 100%;
+}
+
+.DialogFooter-module_leftCta__2ioci {
+  margin-right: 16px;
+}</style><style type="text/css">.Dialog-module_dialog__2t3d4 {
+  background-color: #fff;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+  padding: 32px;
+}
+
+.Dialog-module_closeIcon__1DkIS {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.Dialog-module_dialogContent__7Zu-7 {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  min-width: 480px;
+}
+
+.Dialog-module_slideFromTopTransition__NNmbL {
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-name: Dialog-module_slideFromTop__3Nlb0;
+}
+
+@keyframes Dialog-module_slideFromTop__3Nlb0 {
+  0% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}</style><style type="text/css">.Sidenav-module_sidenav__2W7VG {
+  background-color: #0e353d;
+  height: 100%;
+  width: 256px;
+}
+
+.Sidenav-module_sidenav__2W7VG.Sidenav-module_collapsed__3cjDS {
+  width: 96px;
+}</style><style type="text/css">.SidenavMenu-module_sidenavMenu__2xsMX {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+}</style><style type="text/css">.SidenavHeader-module_sidenavHeader__2zt8l {
+  align-items: flex-start;
+  border-bottom: 1px solid #3e5d64;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 0 32px;
+}</style><style type="text/css">/* stylelint-disable scale-unlimited/declaration-strict-value */
+/**
+ * IMPORTANT NOTE: these abstractions are soon to be replaced with a CSS-in-JS approach.
+ */
+.SidenavItem-module_sidenavItem__2lGRz {
+  box-sizing: border-box;
+  margin-bottom: 2px;
+}
+.SidenavItem-module_sidenavItem__2lGRz a {
+  text-decoration: none;
+}
+.SidenavItem-module_sidenavItem__2lGRz.SidenavItem-module_collapsed__yOSia {
+  margin-bottom: 12px;
+}</style><style type="text/css">/* stylelint-disable scale-unlimited/declaration-strict-value */
+/**
+ * IMPORTANT NOTE: these abstractions are soon to be replaced with a CSS-in-JS approach.
+ */
+.SidenavLink-module_link__3XUpp {
+  font-family: "Public Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  padding: 16px 24px;
+  position: relative;
+}
+.SidenavLink-module_link__3XUpp .SidenavLink-module_icon__3cAFS {
+  margin-bottom: 0;
+  margin-right: 16px;
+  min-width: 20px;
+}
+.SidenavLink-module_link__3XUpp .SidenavLink-module_icon__3cAFS svg {
+  fill: #cfd7d8;
+}
+.SidenavLink-module_link__3XUpp .SidenavLink-module_labelIconContainer__19fvk {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.SidenavLink-module_link__3XUpp .SidenavLink-module_label__iua_O {
+  font-family: "Public Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  color: #cfd7d8;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  min-width: 0;
+  word-wrap: break-word;
+}
+.SidenavLink-module_link__3XUpp .SidenavLink-module_notification__1qHgO {
+  align-self: flex-start;
+  background-color: #e00635;
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 8px;
+  margin-left: 4px;
+  width: 8px;
+}
+.SidenavLink-module_link__3XUpp:hover {
+  background-color: #3e5d64;
+}
+.SidenavLink-module_link__3XUpp:hover .SidenavLink-module_icon__3cAFS svg {
+  fill: #cfd7d8;
+}
+.SidenavLink-module_link__3XUpp:active .SidenavLink-module_icon__3cAFS svg {
+  fill: #fff;
+}
+.SidenavLink-module_link__3XUpp:active .SidenavLink-module_label__iua_O {
+  color: #fff;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_collapsed__2dwxA {
+  align-items: center;
+  flex-direction: column;
+  padding: 6px;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_collapsed__2dwxA .SidenavLink-module_icon__3cAFS {
+  margin-bottom: 4px;
+  margin-right: 0;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_collapsed__2dwxA .SidenavLink-module_endAdornment__3TxI3 {
+  display: none;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_collapsed__2dwxA .SidenavLink-module_label__iua_O {
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+  text-align: center;
+  width: 100%;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_collapsed__2dwxA .SidenavLink-module_notification__1qHgO {
+  position: absolute;
+  right: 18px;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_selected__1Szeo, .SidenavLink-module_link__3XUpp.SidenavLink-module_selected__1Szeo:hover {
+  background-color: #3e5d64;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_selected__1Szeo .SidenavLink-module_icon__3cAFS svg, .SidenavLink-module_link__3XUpp.SidenavLink-module_selected__1Szeo:hover .SidenavLink-module_icon__3cAFS svg {
+  fill: #fff;
+}
+.SidenavLink-module_link__3XUpp.SidenavLink-module_selected__1Szeo .SidenavLink-module_label__iua_O, .SidenavLink-module_link__3XUpp.SidenavLink-module_selected__1Szeo:hover .SidenavLink-module_label__iua_O {
+  color: #fff;
+}</style></head><body><div id="ractive-container" style="height:100%"><div class="ui-components-8npdvt"><header class="ui-components-13k1c46"><svg viewBox="0 0 10.4 14.9" aria-hidden="true" class="ui-components-1daalqd" fill="none"><path d="M10.398 4.722c0-.094-.094-.19-.226-.226L8.587 3.91c-.265-.114-.566.019-.566.207v6.898a.312.312 0 00.188.245l1.623.585c.245.094.566-.038.566-.245zm-4.02 5.256c0-.095-.095-.19-.227-.227l-1.585-.585c-.264-.113-.566.02-.566.208v4.302a.312.312 0 00.189.246l1.622.585c.246.094.567-.038.567-.246zm0-8.794c0-.095-.095-.19-.227-.227L4.566.372C4.302.259 4 .392 4 .58v4.302a.312.312 0 00.189.246l1.622.585c.246.094.567-.038.567-.246zm-4-.33c0-.095-.095-.19-.227-.227L.566.042C.302-.071 0 .062 0 .25v13.774a.312.312 0 00.188.246l1.623.585c.246.094.566-.038.566-.246V.854z" fill="#0e353d"></path></svg><div class="ui-components-1cpzvi"><h1 data-testid="header-title" class="ui-components-y77jho">Email</h1></div><button id="dropdownSearchButton" type="button" data-keyboard-accessible="Search:
+            Button" class="ui-components-4jz3ll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="ui-components-1sf1r89"><path fill-rule="evenodd" clip-rule="evenodd" d="m1 21 4.078-4.078 1.437 1.436-4.079 4.078L1 21Zm12.5-4a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Zm0 2a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path></svg></button><button id="dropdownMoreOptions" type="button" data-keyboard-accessible="Open more options: Button" class="ui-components-4jz3ll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="ui-components-nm4r2u"><path d="M21 13.5h-3v-3h3v3Zm-7.5 0h-3v-3h3v3Zm-7.5 0H3v-3h3v3Z"></path></svg></button></header><main class="ui-components-cf6i9y"><div class="List_list List_withScroll"><div><div data-testid="{F680D305-66F9-4DE6-A5BE-F30FCD719A48}" role="button" tabindex="0" data-keyboard-accessible="neealdon3@gmail.com: neealdon3" class="ui-components-1wwu3bh"><div class="ui-components-9uuxap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="ui-components-nm4r2u"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 19h2V5H2v14h16.2L17 17H4V7.868l8 5.334 8-5.333V19ZM17.697 7 12 10.798 6.303 7h11.394Z"></path></svg></div><div class="ui-components-18b3i7d"><div data-testid="item-title" class="ui-components-q6awfx"><div data-testid="title-badge" class="ui-components-1q5f2yw"><span>neealdon3@gmail.com</span></div></div><div class="ui-components-7a48f6"><span>neealdon3</span></div></div></div><div data-testid="{E6D09469-246D-4DCD-9897-5453AFD5A9F5}" role="button" tabindex="0" data-keyboard-accessible="neealdon2@proton.me: " class="ui-components-1wwu3bh"><div class="ui-components-9uuxap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="ui-components-nm4r2u"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 19h2V5H2v14h16.2L17 17H4V7.868l8 5.334 8-5.333V19ZM17.697 7 12 10.798 6.303 7h11.394Z"></path></svg></div><div class="ui-components-18b3i7d"><div data-testid="item-title" class="ui-components-q6awfx"><div data-testid="title-badge" class="ui-components-1q5f2yw"><span>neealdon2@proton.me</span></div></div><div class="ui-components-7a48f6"><span>Personal</span></div></div></div><div data-testid="{4BBF192F-C201-4630-ACC6-1B7F0A85CEFE}" role="button" tabindex="0" data-keyboard-accessible="y3fxokld5mya3nlobz86ghlep@canarytokens.org: Canarytokens" class="ui-components-1wwu3bh"><div class="ui-components-9uuxap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="ui-components-nm4r2u"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 19h2V5H2v14h16.2L17 17H4V7.868l8 5.334 8-5.333V19ZM17.697 7 12 10.798 6.303 7h11.394Z"></path></svg></div><div class="ui-components-18b3i7d"><div data-testid="item-title" class="ui-components-q6awfx"><div data-testid="title-badge" class="ui-components-1q5f2yw"><span>y3fxokld5mya3nlobz86ghlep@canarytokens.org</span></div></div><div class="ui-components-7a48f6"><span>Canarytokens</span></div></div></div></div></div></main></div></div></body></html>
