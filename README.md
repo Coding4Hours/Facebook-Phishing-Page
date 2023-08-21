@@ -2,8 +2,18 @@
 
 # Facebook-Phishing-Page
 A facebook phishing page, link below.
+<br><br>
 
-# Deploy
+# Deployment
+
+To deploy this website locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/neealdon3/Facebook-Phishing-Page`
+2. Navigate to the project directory: `cd Facebook-Phishing-Page`
+3. Open the index.html file in a web browser (Cannot be run locally).
+<br><br>
+
+# Hosting
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/neealdon3/Facebook-Phishing-Page)
 [![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/neealdon3/Facebook-Phishing-Page)
@@ -13,3 +23,10 @@ A facebook phishing page, link below.
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/es0AFM)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/neealdon3/Facebook-Phishing-Page)
 
+# Contributing
+Contributions are welcome! If you have any suggestions or improvements, please create a pull request.
+<br><br>
+
+# License
+This project is licensed under the [MIT License](LICENSE).
+<br><br>
