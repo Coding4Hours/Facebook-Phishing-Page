@@ -1,6 +1,5 @@
 # Facebook-Phishing-Page
-A facebook phishing page, link below.
-[](https://neealdon3.github.io/Facebook.html)
+[A facebook phishing page.](https://neealdon3.github.io/Facebook.html)
 <br><br>
 
 # Deployment
